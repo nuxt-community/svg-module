@@ -1,0 +1,26 @@
+{
+  "name": "nuxt-svg",
+  "version": "0.0.1",
+  "description": "Super simple svg loading module for Nuxt.js",
+  "main": "lib/module.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sam3d/nuxt-svg.git"
+  },
+  "keywords": [
+    "nuxt",
+    "nuxt.js",
+    "vue",
+    "svg",
+    "webpack"
+  ],
+  "author": "Sam Holmes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sam3d/nuxt-svg/issues"
+  },
+  "homepage": "https://github.com/sam3d/nuxt-svg#readme"
+}
