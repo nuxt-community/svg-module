@@ -2,9 +2,9 @@
  * This is the original RegExp cloned from the original Nuxt.js configuration
  * files, with only the search for ".svg" files removed. Keep tabs on this in case
  * the core decides to add additional qualifiers to the pattern.
- * @type {RegExp}
  */
-const REPLACEMENT_REGEX = /\.(png|jpe?g|gif|webp)$/;
+const ORIGINAL_TEST = /\.(png|jpe?g|gif|svg|webp)$/;
+const REPLACEMENT_TEST = /\.(png|jpe?g|gif|webp)$/;
 
 export default function Module(options) {
 	this.extendBuild(setup);
@@ -20,7 +20,10 @@ function setup(config) {
 
 	// Remove any original svg rules
 	const svgRules = rules.filter(rule => rule.test.test(".svg"));
-	svgRules.forEach(rule => rule.test = REPLACEMENT_REGEX);
+	svgRules.forEach(rule => {
+		if (rule.test.source !== ORIGINAL_TEST.source) throw "nuxt-svg: Unexpected '.svg' rule in the webpack configuration";
+		rule.test = REPLACEMENT_TEST;
+	});
 
 	// Add the custom svg rule
 	const rule = {
