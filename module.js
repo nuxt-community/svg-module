@@ -7,25 +7,32 @@
 const REPLACEMENT_REGEX = /\.(png|jpe?g|gif|webp)$/;
 
 export default function Module(options) {
-	this.extendBuild(config => {
-		const rules = config.module.rules;
+	this.extendBuild(setup);
+}
 
-		// Remove any original svg rules
-		const svgRules = rules.filter(rule => rule.test.test(".svg"));
-		svgRules.forEach(rule => rule.test = REPLACEMENT_REGEX);
+/**
+ * Perform the primary setup for the nuxt-svg module by removing and replacing
+ * all of the rules that match ".svg" with the new one.
+ * @param  {[type]} config The webpack configuration object to extend
+ */
+function setup(config) {
+	const rules = config.module.rules;
 
-		// Add the custom svg rule
-		const rule = {
-			test: /\.svg$/,
-			oneOf: [
-				{ resourceQuery: /inline/, loader: "vue-svg-loader", options: { svgo: false } },
-				{ resourceQuery: /data/, loader: "url-loader" },
-				{ loader: "file-loader" } // By default, always use file-loader
-			]
-		};
+	// Remove any original svg rules
+	const svgRules = rules.filter(rule => rule.test.test(".svg"));
+	svgRules.forEach(rule => rule.test = REPLACEMENT_REGEX);
 
-		rules.push(rule); // Actually add the rule
-	});
+	// Add the custom svg rule
+	const rule = {
+		test: /\.svg$/,
+		oneOf: [
+			{ resourceQuery: /inline/, loader: "vue-svg-loader", options: { svgo: false } },
+			{ resourceQuery: /data/, loader: "url-loader" },
+			{ loader: "file-loader" } // By default, always use file-loader
+		]
+	};
+
+	rules.push(rule); // Actually add the rule
 }
 
 module.exports.meta = require("./package.json");
