@@ -2,7 +2,7 @@
   "name": "nuxt-svg",
   "version": "0.0.1",
   "description": "Super simple svg loading module for Nuxt.js",
-  "main": "lib/module.js",
+  "main": "module.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
