@@ -1,4 +1,4 @@
-# nuxt-svg
+# nuxt-svg [![npm version](https://badge.fury.io/js/nuxt-svg.svg)](https://badge.fury.io/js/nuxt-svg)
 _Super simple svg loading module for Nuxt.js_
 
 ## Introduction
