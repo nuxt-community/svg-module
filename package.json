@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/sam3d/nuxt-svg/issues"
   },
-  "homepage": "https://github.com/sam3d/nuxt-svg#readme"
+  "homepage": "https://github.com/sam3d/nuxt-svg#readme",
+  "dependencies": {
+    "vue-svg-loader": "^0.11.0"
+  }
 }
