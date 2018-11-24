@@ -13,7 +13,7 @@ export default function Module(options) {
 /**
  * Perform the primary setup for the nuxt-svg module by removing and replacing
  * all of the rules that match ".svg" with the new one.
- * @param  {[type]} config The webpack configuration object to extend
+ * @param config The webpack configuration object to extend
  */
 function setup(config) {
 	const rules = config.module.rules;
