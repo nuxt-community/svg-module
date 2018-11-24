@@ -21,7 +21,7 @@ function setup(config) {
 	// Remove any original svg rules
 	const svgRules = rules.filter(rule => rule.test.test(".svg"));
 	svgRules.forEach(rule => {
-		if (rule.test.source !== ORIGINAL_TEST.source) throw "nuxt-svg: Unexpected '.svg' rule in the webpack configuration";
+		if (rule.test.source !== ORIGINAL_TEST.source && rule.test.source !== REPLACEMENT_TEST.source) throw "nuxt-svg: Unexpected '.svg' rule in the webpack configuration";
 		rule.test = REPLACEMENT_TEST;
 	});
 
