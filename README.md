@@ -12,7 +12,7 @@ _Super simple svg loading module for Nuxt.js_
 ## Installation
 
 ```console
-npm install -S nuxt-svg
+npm install nuxt-svg
 ```
 
 ```javascript
