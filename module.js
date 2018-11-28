@@ -25,7 +25,7 @@ function setup(config) {
 		rule.test = REPLACEMENT_TEST;
 	});
 
-	// Add the custom svg rule
+	// Create the custom SVG rule
 	const rule = {
 		test: /\.svg$/,
 		oneOf: [
