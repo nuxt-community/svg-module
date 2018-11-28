@@ -25,9 +25,12 @@
   },
   "homepage": "https://github.com/sam3d/nuxt-svg#readme",
   "dependencies": {
+    "file-loader": "^2.0.0",
+    "url-loader": "^1.1.2",
     "vue-svg-loader": "^0.11.0"
   },
   "devDependencies": {
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "webpack": "^4.26.1"
   }
 }
