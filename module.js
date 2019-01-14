@@ -7,7 +7,11 @@ const ORIGINAL_TEST = /\.(png|jpe?g|gif|svg|webp)$/;
 const REPLACEMENT_TEST = /\.(png|jpe?g|gif|webp)$/;
 
 export default function Module(options) {
-  this.extendBuild(setup);
+  this.extendBuild(
+    function (config) {
+      setup(config, options)
+    }
+  );
 }
 
 /**
@@ -16,7 +20,7 @@ export default function Module(options) {
  *
  * @param config The webpack configuration object to extend
  */
-function setup(config) {
+function setup(config, options) {
   const rules = config.module.rules;
 
   // Remove any original svg rules
@@ -28,7 +32,6 @@ function setup(config) {
       rule.test.source !== REPLACEMENT_TEST.source
     )
       throw "nuxt-svg: Unexpected '.svg' rule in the webpack configuration";
-
     rule.test = REPLACEMENT_TEST;
   });
 
@@ -39,7 +42,11 @@ function setup(config) {
       {
         resourceQuery: /inline/,
         loader: "vue-svg-loader",
-        options: { svgo: false }
+        options: {
+          svgo: typeof options.svgo === 'object'
+            ? options.svgo
+            : false
+        }
       },
       {
         resourceQuery: /data/,
