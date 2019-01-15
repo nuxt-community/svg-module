@@ -43,7 +43,7 @@ function setup(config, options) {
         resourceQuery: /inline/,
         loader: "vue-svg-loader",
         options: {
-          svgo: typeof options.svgo === 'object'
+          svgo: typeof options.svgo === "object"
             ? options.svgo
             : false
         }

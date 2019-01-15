@@ -88,6 +88,22 @@ _Inline as an actual svg element using `vue-svg-loader`_
 ```html
 <svg xmlns="http://www.w3.org/2000/svg"><path></path></svg>
 ```
+#### SVGO options
+```javascript
+// nuxt.config.js
+export default {
+  modules: ["nuxt-svg", {
+    svgo: {
+      plugins: [
+        { removeDoctype: true },
+        { removeComments: true },
+        { removeViewBox: false },
+        ...
+      ],
+    }
+  }]
+};
+```
 
 ## Caveats
 
