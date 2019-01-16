@@ -97,11 +97,13 @@ You can change any of the loader options by supplying them to the module:
 // nuxt.config.js
 export default {
   modules: [
-    "nuxt-svg",
-    {
-      inline: { svgo: true },
-      data: { resourceQuery: /url/ }
-    }
+    [
+      "nuxt-svg",
+      {
+        inline: { svgo: true },
+        data: { resourceQuery: /url/ }
+      }
+    ]
   ]
 };
 ```
