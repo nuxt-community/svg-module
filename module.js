@@ -13,8 +13,8 @@ const REPLACEMENT_TEST = /\.(png|jpe?g|gif|webp)$/;
  * They are overwritten as needed.
  */
 const defaults = {
-  inline: { svgo: false },
-  data: {},
+  inline: { resourceQuery: /inline/, svgo: false },
+  data: { resourceQuery: /data/ },
   file: {}
 };
 
@@ -53,12 +53,12 @@ function setup(config, options) {
     test: /\.svg$/,
     oneOf: [
       {
-        resourceQuery: /inline/,
+        resourceQuery: getResourceQuery(options.inline),
         loader: "vue-svg-loader",
         options: options.inline
       },
       {
-        resourceQuery: /data/,
+        resourceQuery: getResourceQuery(options.data),
         loader: "url-loader",
         options: options.data
       },
@@ -70,6 +70,18 @@ function setup(config, options) {
   };
 
   rules.push(rule); // Actually add the rule
+}
+
+/**
+ * Retrieve and remove the resource query from the loader options
+ * @param {object} options The loader options object
+ */
+function getResourceQuery(options) {
+  if (!options.resourceQuery) return; // Ignore if no resource query
+
+  const query = options.resourceQuery;
+  delete options.resourceQuery;
+  return query;
 }
 
 module.exports.meta = require("./package.json");
