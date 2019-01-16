@@ -40,9 +40,8 @@ function setup(config, options) {
     if (
       rule.test.source !== ORIGINAL_TEST.source &&
       rule.test.source !== REPLACEMENT_TEST.source
-    ) {
+    )
       throw "nuxt-svg: Unexpected '.svg' rule in the webpack configuration";
-    }
 
     // Modify the rule
     rule.test = REPLACEMENT_TEST;
