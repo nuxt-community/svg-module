@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev"
+  },
+  "dependencies": {
+    "nuxt": "^2.3.4",
+    "nuxt-svg": "file:../.."
+  }
+}
