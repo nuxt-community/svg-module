@@ -17,11 +17,20 @@ export default function Module(options) {
  * @param config The webpack configuration object to extend
  */
 function setup(config) {
+  // Find the existing svg rules
   const rules = config.module.rules;
-
-  // Remove any original svg rules
   const svgRules = rules.filter(rule => rule.test.test(".svg"));
 
+  /**
+   * Find the existing svg rule and replace it with one that doesn't include the
+   * svg test so that the rule no longer matches.
+   *
+   * NOTE: Hot-reloading causes the rule that is found to either be the original
+   * or the replacement (as this can be called after the initial load).
+   * Therefore an error is thrown if it neither the old nor the new, as the
+   * original rule either couldn't be found or the new rule didn't get added
+   * properly (which should throw an error).
+   */
   svgRules.forEach(rule => {
     if (
       rule.test.source !== ORIGINAL_TEST.source &&
@@ -32,7 +41,7 @@ function setup(config) {
     rule.test = REPLACEMENT_TEST;
   });
 
-  // Create the custom SVG rule
+  // Create the custom svg rule
   const rule = {
     test: /\.svg$/,
     oneOf: [
