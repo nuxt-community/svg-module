@@ -89,6 +89,27 @@ _Inline as an actual svg element using `vue-svg-loader`_
 <svg xmlns="http://www.w3.org/2000/svg"><path></path></svg>
 ```
 
+## Configuration
+
+You can change any of the loader options by supplying them to the module:
+
+```javascript
+// nuxt.config.js
+export default {
+  modules: [
+    "nuxt-svg",
+    {
+      inline: { svgo: true },
+      data: { resourceQuery: /url/ }
+    }
+  ]
+};
+```
+
+In the above example, we are changing `vue-svg-loader` to use `svgo`.
+
+With the `url-loader`, we want to change the `resourceQuery` to use `url` instead (so in this example, you would use `file.svg?url` _instead of_ `file.svg?data`).
+
 ## Caveats
 
 In order for this module to work correctly, the [default `.svg` Nuxt.js webpack rule](https://nuxtjs.org/guide/assets/#webpack) gets replaced with this handler.
