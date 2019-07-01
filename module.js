@@ -57,8 +57,7 @@ function setup(config) {
     oneOf: [
       {
         resourceQuery: /inline/,
-        loader: "vue-svg-loader",
-        options: { svgo: false }
+        use: vueSvgLoader
       },
       {
         resourceQuery: /data/,
