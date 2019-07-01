@@ -32,6 +32,25 @@ function setup(config) {
     rule.test = REPLACEMENT_TEST;
   });
 
+  const vueSvgLoader = [
+    {
+      loader: "vue-svg-loader",
+      options: {
+        svgo: false
+      }
+    }
+  ];
+
+  if (config.name === "client") {
+    vueSvgLoader.unshift({
+      loader: "babel-loader",
+      options: {
+        presets: ["@nuxt/babel-preset-app"],
+        plugins: ["@babel/plugin-proposal-object-rest-spread"]
+      }
+    });
+  }
+
   // Create the custom SVG rule
   const rule = {
     test: /\.svg$/,

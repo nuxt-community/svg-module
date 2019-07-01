@@ -30,6 +30,7 @@
     "vue-svg-loader": "^0.12.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
     "jest": "^24.8.0",
     "webpack": "^4.34.0"
   }
