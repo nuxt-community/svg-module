@@ -1,29 +1,28 @@
 {
-  "name": "nuxt-svg",
+  "name": "@nuxtjs/svg",
   "version": "0.1.6",
   "description": "Super simple svg loading module for Nuxt.js",
-  "main": "module.js",
-  "scripts": {
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sam3d/nuxt-svg.git"
-  },
   "keywords": [
     "nuxt",
-    "nuxtjs",
     "nuxt-module",
-    "vue",
+    "nuxtjs",
     "svg",
+    "vue",
     "webpack"
   ],
-  "author": "Sam Holmes",
+  "repository": "nuxt-community/svg-module",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sam3d/nuxt-svg/issues"
+  "author": "Sam Holmes",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/module.js",
+  "scripts": {
+    "dev": "nuxt dev example",
+    "lint": "eslint .",
+    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
+    "test": "npm run lint && jest"
   },
-  "homepage": "https://github.com/sam3d/nuxt-svg#readme",
   "dependencies": {
     "file-loader": "^4.0.0",
     "url-loader": "^2.0.0",
@@ -31,7 +30,15 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.5.5",
+    "@nuxtjs/eslint-config": "^1.1.2",
+    "babel-eslint": "^10.0.2",
+    "codecov": "^3.5.0",
+    "eslint": "^6.1.0",
+    "get-port": "^5.0.0",
     "jest": "^24.8.0",
+    "nuxt-edge": "^2.9.0-26092811.f65c72d7",
+    "standard-version": "^7.0.0",
     "webpack": "^4.34.0"
   }
 }

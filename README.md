@@ -1,10 +1,18 @@
-# nuxt-svg [![npm version](https://badge.fury.io/js/nuxt-svg.svg)](https://badge.fury.io/js/nuxt-svg) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+# @nuxtjs/svg
+
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![Circle CI][circle-ci-src]][circle-ci-href]
+[![Codecov][codecov-src]][codecov-href]
+[![License][license-src]][license-href]
 
 _Super simple svg loading module for Nuxt.js_
 
+[📖 **Release Notes**](./CHANGELOG.md)
+
 ## Introduction
 
-`nuxt-svg` allows you to import `.svg` files in multiple ways depending on the [resource query](https://webpack.js.org/configuration/module/#rule-resourcequery) you provide. Currently, this allows you to do the following:
+SVG module for Nuxt.js, allows you to import `.svg` files in multiple ways depending on the [resource query](https://webpack.js.org/configuration/module/#rule-resourcequery) you provide. Currently, this allows you to do the following:
 
 - `file.svg` - normal import using `file-loader`
 - `file.svg?data` - base64 data url import using `url-loader`
@@ -12,14 +20,31 @@ _Super simple svg loading module for Nuxt.js_
 
 ## Installation
 
+Using Yarn:
+/**
+ * This is the original RegExp cloned from the original Nuxt.js configuration
+ * files, with only the search for ".svg" files removed. Keep tabs on this in
+ * case the core decides to add additional qualifiers to the pattern.
+ */
+const ORIGINAL_TEST = /\.(png|jpe?g|gif|svg|webp)$/;
+const REPLACEMENT_TEST = /\.(png|jpe?g|gif|webp)$/;
+
 ```console
-npm install nuxt-svg
+yarn add @nuxtjs/svg
+```
+
+Using NPM:
+
+```console
+npm install @nuxtjs/svg
 ```
 
 ```javascript
 // nuxt.config.js
 export default {
-  modules: ["nuxt-svg"]
+  modules: [
+    '@nuxtjs/svg'
+  ]
 };
 ```
 
@@ -102,3 +127,25 @@ So when using the `?data` query, it will _always_ use `url-loader` regardless of
 As this loader attempts to abstract webpack configuration from the process and make it easier to use multiple svg loaders, any contributions that add more svg loader methods to the configuration will be accepted wholeheartedly!
 
 Also I'll be actively maintaining this project so if you'd rather just make a request for a loader or a feature; I'd be happy to take a look and see what I can do myself :)
+
+## License
+
+[MIT License](./LICENSE)
+
+Copyright (c) Sam Holmes
+
+<!-- Badges -->
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/svg/latest.svg?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/svg
+
+[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/svg.svg?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/svg
+
+[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/svg-module.svg?style=flat-square
+[circle-ci-href]: https://circleci.com/gh/nuxt-community/svg-module
+
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/svg-module.svg?style=flat-square
+[codecov-href]: https://codecov.io/gh/nuxt-community/svg-module
+
+[license-src]: https://img.shields.io/npm/l/@nuxtjs/svg.svg?style=flat-square
+[license-href]: https://npmjs.com/package/@nuxtjs/svg
