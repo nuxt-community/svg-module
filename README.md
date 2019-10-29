@@ -137,6 +137,31 @@ _Load the raw SVG data using `raw-loader`. Useful if anything in the SVG needs t
 </script>
 ```
 
+### utf-8 encoded DataUrl String
+
+_URL encoded SVG using `svg-url-loader` for use in CSS_
+
+```html
+<template>
+  <div :style="inlineStyle" />
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        inlineStyle: {
+          width: '556px',
+          height: '96px',
+          background: `url("${require('~/assets/nuxt.svg?url')}") no-repeat`,
+          backgroundSize: 'cover'
+        }
+      }
+    }
+  };
+</script>
+```
+
 ## Caveats
 
 In order for this module to work correctly, the [default `.svg` Nuxt.js webpack rule](https://nuxtjs.org/guide/assets/#webpack) gets replaced with this handler.
