@@ -9184,6 +9184,14 @@ svg-to-vue@^0.4.0:
   dependencies:
     svgo "^1.1.1"
 
+svg-url-loader@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/svg-url-loader/-/svg-url-loader-3.0.2.tgz#7bcbb676927e71c9267fd879f8962396b59aa04a"
+  integrity sha512-MUJFVU2uuOTZW6Eq6NuXZxhaIyWiuKtZMcT90nCkcvIZPGGc0CYyZWYP/rtXUkja5qagNMpxDwdZ/tuC6ywfWg==
+  dependencies:
+    file-loader "~4.2.0"
+    loader-utils "~1.2.3"
+
 svgo@^1.0.0, svgo@^1.1.1:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/svgo/-/svgo-1.3.0.tgz#bae51ba95ded9a33a36b7c46ce9c359ae9154313"

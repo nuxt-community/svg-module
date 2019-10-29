@@ -11,6 +11,9 @@
 
     <h3>Inline Raw</h3>
     <div v-html="rawSvg" />
+
+    <h3>Inline URL:</h3>
+    <div :style="inlineStyle" />
   </div>
 </template>
 
@@ -25,7 +28,13 @@ export default {
 
   data () {
     return {
-      rawSvg: NuxtLogoRaw
+      rawSvg: NuxtLogoRaw,
+      inlineStyle: {
+        width: '556px',
+        height: '96px',
+        background: `url("${require('~/assets/nuxt.svg?url')}") no-repeat`,
+        backgroundSize: 'cover'
+      }
     }
   }
 }
