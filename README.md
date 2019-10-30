@@ -137,7 +137,6 @@ _Load the raw SVG data using `raw-loader`. Useful if anything in the SVG needs t
 </script>
 ```
 
-
 ## Caveats
 
 In order for this module to work correctly, the [default `.svg` Nuxt.js webpack rule](https://nuxtjs.org/guide/assets/#webpack) gets replaced with this handler.
