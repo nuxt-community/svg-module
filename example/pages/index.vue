@@ -16,7 +16,7 @@
 
 <script>
 import NuxtLogo from '~/assets/nuxt.svg?inline'
-import nuxtLogoRaw from '~/assets/nuxt.svg?raw'
+import NuxtLogoRaw from '~/assets/nuxt.svg?raw'
 
 export default {
   components: {
@@ -25,7 +25,7 @@ export default {
 
   data () {
     return {
-      rawSvg: nuxtLogoRaw
+      rawSvg: NuxtLogoRaw
     }
   }
 }
