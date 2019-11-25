@@ -4139,7 +4139,7 @@ file-entry-cache@^5.0.1:
   dependencies:
     flat-cache "^2.0.1"
 
-file-loader@^4.0.0, file-loader@^4.2.0, file-loader@~4.2.0:
+file-loader@^4.0.0, file-loader@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-4.2.0.tgz#5fb124d2369d7075d70a9a5abecd12e60a95215e"
   integrity sha512-+xZnaK5R8kBJrHK0/6HRlrKNamvVS5rjyuju+rnyxRGuwUJwpAMsVzUl5dz6rK8brkzjV6JpcFNjp6NqV0g1OQ==
@@ -5958,7 +5958,7 @@ loader-utils@^0.2.16:
     json5 "^0.5.0"
     object-assign "^4.0.1"
 
-loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.3, loader-utils@~1.2.3:
+loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.2.3.tgz#1ff5dc6911c9f0a062531a4c04b609406108c2c7"
   integrity sha512-fkpz8ejdnEMG3s37wGL07iSBDg99O9D5yflE9RGNH3hRdx9SOwYfnGYdZOUIZitN8E+E2vkq3MUMYMvPYl5ZZA==
@@ -8087,13 +8087,13 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-raw-loader@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-3.1.0.tgz#5e9d399a5a222cc0de18f42c3bc5e49677532b3f"
-  integrity sha512-lzUVMuJ06HF4rYveaz9Tv0WRlUMxJ0Y1hgSkkgg+50iEdaI0TthyEDe08KIHb0XsF6rn8WYTqPCaGTZg3sX+qA==
+raw-loader@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-4.0.0.tgz#d639c40fb9d72b5c7f8abc1fb2ddb25b29d3d540"
+  integrity sha512-iINUOYvl1cGEmfoaLjnZXt4bKfT2LJnZZib5N/LLyAphC+Dd11vNP9CNVb38j+SAJpFI1uo8j9frmih53ASy7Q==
   dependencies:
-    loader-utils "^1.1.0"
-    schema-utils "^2.0.1"
+    loader-utils "^1.2.3"
+    schema-utils "^2.5.0"
 
 rc@^1.2.7:
   version "1.2.8"
@@ -8577,7 +8577,7 @@ schema-utils@^2.0.0:
     ajv "^6.1.0"
     ajv-keywords "^3.1.0"
 
-schema-utils@^2.0.1:
+schema-utils@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-2.5.0.tgz#8f254f618d402cc80257486213c8970edfd7c22f"
   integrity sha512-32ISrwW2scPXHUSusP8qMg5dLUawKkyV+/qIEV9JdXKx+rsM6mi8vZY8khg2M69Qom16rtroWXD3Ybtiws38gQ==
