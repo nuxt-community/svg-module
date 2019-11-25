@@ -114,6 +114,29 @@ _Inline as an actual svg element using `vue-svg-loader`_
 <svg xmlns="http://www.w3.org/2000/svg"><path></path></svg>
 ```
 
+### Raw SVG loader
+
+_Load the raw SVG data using `raw-loader`. Useful if anything in the SVG needs to be modified_
+
+
+```html
+<template>
+  <div v-html="rawSvg" />
+</template>
+
+<script>
+  import nuxtLogoRaw from '~/assets/nuxt.svg?raw'
+
+  export default {
+    data () {
+      return {
+        rawSvg: nuxtLogoRaw
+      }
+    }
+  };
+</script>
+```
+
 ## Caveats
 
 In order for this module to work correctly, the [default `.svg` Nuxt.js webpack rule](https://nuxtjs.org/guide/assets/#webpack) gets replaced with this handler.
