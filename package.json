@@ -37,7 +37,7 @@
     "codecov": "^3.5.0",
     "eslint": "^6.1.0",
     "get-port": "^5.0.0",
-    "jest": "^24.8.0",
+    "jest": "^25.1.0",
     "nuxt-edge": "^2.9.0-26092811.f65c72d7",
     "standard-version": "^7.0.0",
     "webpack": "^4.34.0"
