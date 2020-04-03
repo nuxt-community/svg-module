@@ -21,13 +21,6 @@ SVG module for Nuxt.js, allows you to import `.svg` files in multiple ways depen
 ## Installation
 
 Using Yarn:
-/**
- * This is the original RegExp cloned from the original Nuxt.js configuration
- * files, with only the search for ".svg" files removed. Keep tabs on this in
- * case the core decides to add additional qualifiers to the pattern.
- */
-const ORIGINAL_TEST = /\.(png|jpe?g|gif|svg|webp)$/;
-const REPLACEMENT_TEST = /\.(png|jpe?g|gif|webp)$/;
 
 ```console
 yarn add @nuxtjs/svg
@@ -42,9 +35,7 @@ npm install @nuxtjs/svg
 ```javascript
 // nuxt.config.js
 export default {
-  modules: [
-    '@nuxtjs/svg'
-  ]
+  modules: ["@nuxtjs/svg"],
 };
 ```
 
@@ -54,7 +45,7 @@ And that's it! You don't have to install anything else, you're ready to go.
 
 The usage examples are documented as:
 
-```html
+```vue
 <!-- Nuxt.js code -->
 ```
 
@@ -66,7 +57,7 @@ The usage examples are documented as:
 
 _Import normally as an external resource using `file-loader`_
 
-```html
+```vue
 <template>
   <img src="~assets/nuxt.svg" />
 </template>
@@ -80,7 +71,7 @@ _Import normally as an external resource using `file-loader`_
 
 _Inline as a URL (no external requests) using `url-loader`_
 
-```html
+```vue
 <template>
   <img src="~assets/nuxt.svg?data" />
 </template>
@@ -94,19 +85,19 @@ _Inline as a URL (no external requests) using `url-loader`_
 
 _Inline as an actual svg element using `vue-svg-loader`_
 
-```html
+```vue
 <template>
   <NuxtLogo />
 </template>
 
 <script>
-  import NuxtLogo from "~/assets/nuxt.svg?inline";
+import NuxtLogo from "~/assets/nuxt.svg?inline";
 
-  export default {
-    components: {
-      NuxtLogo
-    }
-  };
+export default {
+  components: {
+    NuxtLogo,
+  },
+};
 </script>
 ```
 
@@ -118,22 +109,21 @@ _Inline as an actual svg element using `vue-svg-loader`_
 
 _Load the raw SVG data using `raw-loader`. Useful if anything in the SVG needs to be modified_
 
-
-```html
+```vue
 <template>
   <div v-html="rawSvg" />
 </template>
 
 <script>
-  import nuxtLogoRaw from '~/assets/nuxt.svg?raw'
+import nuxtLogoRaw from "~/assets/nuxt.svg?raw";
 
-  export default {
-    data () {
-      return {
-        rawSvg: nuxtLogoRaw
-      }
-    }
-  };
+export default {
+  data() {
+    return {
+      rawSvg: nuxtLogoRaw,
+    };
+  },
+};
 </script>
 ```
 
@@ -158,17 +148,14 @@ Also I'll be actively maintaining this project so if you'd rather just make a re
 Copyright (c) Sam Holmes
 
 <!-- Badges -->
+
 [npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/svg/latest.svg?style=flat-square
 [npm-version-href]: https://npmjs.com/package/@nuxtjs/svg
-
 [npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/svg.svg?style=flat-square
 [npm-downloads-href]: https://npmjs.com/package/@nuxtjs/svg
-
 [circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/svg-module.svg?style=flat-square
 [circle-ci-href]: https://circleci.com/gh/nuxt-community/svg-module
-
 [codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/svg-module.svg?style=flat-square
 [codecov-href]: https://codecov.io/gh/nuxt-community/svg-module
-
 [license-src]: https://img.shields.io/npm/l/@nuxtjs/svg.svg?style=flat-square
 [license-href]: https://npmjs.com/package/@nuxtjs/svg
