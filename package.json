@@ -22,7 +22,7 @@
   "dependencies": {
     "file-loader": "^6.0.0",
     "raw-loader": "^4.0.0",
-    "url-loader": "^4.0.0",
+    "url-loader": "^4.1.0",
     "vue-svg-loader": "^0.16.0"
   },
   "devDependencies": {
