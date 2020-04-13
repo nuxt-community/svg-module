@@ -8,23 +8,16 @@ _Super simple svg loading module for Nuxt.js_
 
 ## Introduction
 
-SVG module for Nuxt.js, allows you to import `.svg` files in multiple ways depending on the [resource query](https://webpack.js.org/configuration/module/#rule-resourcequery) you provide. Currently, this allows you to do the following:
+This package is for loading SVG's into Nuxt.js pages. It allows you to import `.svg` files in multiple ways depending on the [resource query](https://webpack.js.org/configuration/module/#rule-resourcequery) you provide. Currently, this allows you to do the following:
 
 - `file.svg` - normal import using `file-loader`
 - `file.svg?data` - base64 data url import using `url-loader`
 - `file.svg?inline` - inline import using `vue-svg-loader`
+- `file.svg?raw` - raw html import using `raw-loader`
 
 ## Installation
 
-Using Yarn:
-
-```console
-yarn add @nuxtjs/svg
-```
-
-Using NPM:
-
-```console
+```shell
 npm install @nuxtjs/svg
 ```
 
@@ -41,7 +34,7 @@ And that's it! You don't have to install anything else, you're ready to go.
 
 The usage examples are documented as:
 
-```vue
+```html
 <!-- Nuxt.js code -->
 ```
 
@@ -49,11 +42,9 @@ The usage examples are documented as:
 <!-- Outputted html -->
 ```
 
-### Standard external import
+### `file-loader`
 
-_Import normally as an external resource using `file-loader`_
-
-```vue
+```html
 <template>
   <img src="~assets/nuxt.svg" />
 </template>
@@ -63,11 +54,9 @@ _Import normally as an external resource using `file-loader`_
 <img src="/_nuxt/9405b9978eb50f73b53ac1326b93f211.svg" />
 ```
 
-### Inline base64 url
+### `url-loader`
 
-_Inline as a URL (no external requests) using `url-loader`_
-
-```vue
+```html
 <template>
   <img src="~assets/nuxt.svg?data" />
 </template>
@@ -77,23 +66,19 @@ _Inline as a URL (no external requests) using `url-loader`_
 <img src="data:image/svg+xml;base64,P...2h913j1g18h98hr" />
 ```
 
-### Inline svg element
+### `vue-svg-loader`
 
-_Inline as an actual svg element using `vue-svg-loader`_
-
-```vue
+```html
 <template>
   <NuxtLogo />
 </template>
 
 <script>
-import NuxtLogo from "~/assets/nuxt.svg?inline";
+  import NuxtLogo from "~/assets/nuxt.svg?inline";
 
-export default {
-  components: {
-    NuxtLogo,
-  },
-};
+  export default {
+    components: { NuxtLogo },
+  };
 </script>
 ```
 
@@ -101,26 +86,14 @@ export default {
 <svg xmlns="http://www.w3.org/2000/svg"><path></path></svg>
 ```
 
-### Raw SVG loader
+### `raw-loader`
 
-_Load the raw SVG data using `raw-loader`. Useful if anything in the SVG needs to be modified_
+Load the raw SVG data as HTML using `raw-loader`:
 
-```vue
+```html
 <template>
-  <div v-html="rawSvg" />
+  <div v-html="~assets/nuxt.svg?raw" />
 </template>
-
-<script>
-import nuxtLogoRaw from "~/assets/nuxt.svg?raw";
-
-export default {
-  data() {
-    return {
-      rawSvg: nuxtLogoRaw,
-    };
-  },
-};
-</script>
 ```
 
 ## Caveats
@@ -149,9 +122,5 @@ Copyright (c) Sam Holmes
 [npm-version-href]: https://npmjs.com/package/@nuxtjs/svg
 [npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/svg.svg?style=flat-square
 [npm-downloads-href]: https://npmjs.com/package/@nuxtjs/svg
-[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/svg-module.svg?style=flat-square
-[circle-ci-href]: https://circleci.com/gh/nuxt-community/svg-module
-[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/svg-module.svg?style=flat-square
-[codecov-href]: https://codecov.io/gh/nuxt-community/svg-module
 [license-src]: https://img.shields.io/npm/l/@nuxtjs/svg.svg?style=flat-square
 [license-href]: https://npmjs.com/package/@nuxtjs/svg
