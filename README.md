@@ -30,7 +30,7 @@ This package is for loading SVG's into Nuxt.js pages. It allows you to import `.
 ## Installation
 
 ```shell
-npm install @nuxtjs/svg
+npm install --save-dev @nuxtjs/svg
 ```
 
 ```javascript
