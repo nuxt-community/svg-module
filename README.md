@@ -104,8 +104,26 @@ Load the raw SVG data as HTML using `raw-loader`:
 
 ```html
 <template>
-  <div v-html="~assets/nuxt.svg?raw" />
+  <div v-html="rawNuxtLogo" />
 </template>
+
+<script>
+  import rawNuxtLogo from "~/assets/nuxt.svg?raw";
+
+  export default {
+    data() {
+      return { rawNuxtLogo };
+    },
+  };
+</script>
+```
+
+```html
+<div data-v-48efeaf8="">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 298">
+    <g fill-rule="nonzero" fill="none"><path></path></g>
+  </svg>
+</div>
 ```
 
 ## Caveats
