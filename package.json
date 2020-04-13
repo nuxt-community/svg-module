@@ -21,7 +21,8 @@
     "dev": "nuxt dev example",
     "lint": "eslint .",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
-    "test": "npm run lint && jest"
+    "test": "npm run lint && jest",
+    "format": "prettier --write '**/*.{js,json,vue}'"
   },
   "dependencies": {
     "file-loader": "^6.0.0",
@@ -39,6 +40,7 @@
     "get-port": "^5.1.1",
     "jest": "^25.2.7",
     "nuxt-edge": "^2.13.0-26431214.4f6f7fe1",
+    "prettier": "^2.0.4",
     "standard-version": "^7.1.0",
     "webpack": "^4.42.1"
   }

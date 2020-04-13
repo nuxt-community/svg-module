@@ -1,10 +1,10 @@
 <template>
   <div>
     <h3>External Import:</h3>
-    <img src="~assets/nuxt.svg">
+    <img src="~assets/nuxt.svg" />
 
     <h3>Inline base64:</h3>
-    <img src="~assets/nuxt.svg?data">
+    <img src="~assets/nuxt.svg?data" />
 
     <h3>Inline Components:</h3>
     <NuxtLogo />
@@ -15,18 +15,18 @@
 </template>
 
 <script>
-import NuxtLogo from '~/assets/nuxt.svg?inline'
-import NuxtLogoRaw from '~/assets/nuxt.svg?raw'
+import NuxtLogo from "~/assets/nuxt.svg?inline";
+import NuxtLogoRaw from "~/assets/nuxt.svg?raw";
 
 export default {
   components: {
-    NuxtLogo
+    NuxtLogo,
   },
 
-  data () {
+  data() {
     return {
-      rawSvg: NuxtLogoRaw
-    }
-  }
-}
+      rawSvg: NuxtLogoRaw,
+    };
+  },
+};
 </script>
