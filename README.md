@@ -6,6 +6,18 @@
 
 _Super simple svg loading module for Nuxt.js_
 
+- [@nuxtjs/svg](#nuxtjssvg)
+  - [Introduction](#introduction)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [`file-loader`](#file-loader)
+    - [`url-loader`](#url-loader)
+    - [`vue-svg-loader`](#vue-svg-loader)
+    - [`raw-loader`](#raw-loader)
+  - [Caveats](#caveats)
+  - [Contributing](#contributing)
+  - [License](#license)
+
 ## Introduction
 
 This package is for loading SVG's into Nuxt.js pages. It allows you to import `.svg` files in multiple ways depending on the [resource query](https://webpack.js.org/configuration/module/#rule-resourcequery) you provide. Currently, this allows you to do the following:
