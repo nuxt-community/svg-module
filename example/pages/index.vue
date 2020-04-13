@@ -1,16 +1,24 @@
 <template>
   <div class="root">
-    <h2>file-loader</h2>
-    <img src="~assets/nuxt.svg" />
+    <div>
+      <h2>file-loader</h2>
+      <img src="~/assets/nuxt.svg" />
+    </div>
 
-    <h2>url-loader</h2>
-    <img src="~assets/nuxt.svg?data" />
+    <div>
+      <h2>url-loader</h2>
+      <img src="~/assets/nuxt.svg?data" />
+    </div>
 
-    <h2>vue-svg-loader</h2>
-    <NuxtLogo />
+    <div>
+      <h2>vue-svg-loader</h2>
+      <NuxtLogo />
+    </div>
 
-    <h2>raw-loader</h2>
-    <div v-html="rawNuxtLogo" />
+    <div>
+      <h2>raw-loader</h2>
+      <div v-html="rawNuxtLogo" />
+    </div>
   </div>
 </template>
 
@@ -28,13 +36,29 @@ export default {
 </script>
 
 <style>
-.root {
-  font-family: sans-serif;
-  max-width: 300px;
-  margin: 0 auto;
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  height: 100%;
+  background-color: #eee;
 }
 
-h2:not(:first-of-type) {
-  margin-top: 50px;
+.root {
+  font-family: sans-serif;
+
+  display: grid;
+  gap: 2px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.root > div {
+  background-color: #fff;
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 0;
 }
 </style>
