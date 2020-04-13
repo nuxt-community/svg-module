@@ -27,7 +27,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .root {
   font-family: sans-serif;
   max-width: 300px;
