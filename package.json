@@ -33,10 +33,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
-    "@nuxtjs/eslint-config": "^2.0.2",
-    "babel-eslint": "^10.1.0",
     "codecov": "^3.6.5",
-    "eslint": "^6.8.0",
     "get-port": "^5.1.1",
     "jest": "^25.2.7",
     "nuxt-edge": "^2.13.0-26431214.4f6f7fe1",
