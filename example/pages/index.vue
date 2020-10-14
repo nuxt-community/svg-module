@@ -19,15 +19,21 @@
       <h2>raw-loader</h2>
       <div v-html="rawNuxtLogo" />
     </div>
+
+    <div>
+      <h2>svg-to-vue-component</h2>
+      <NuxtLogoComponent />
+    </div>
   </div>
 </template>
 
 <script>
 import NuxtLogo from "~/assets/nuxt.svg?inline";
+import NuxtLogoComponent from "~/assets/nuxt.svg?component";
 import rawNuxtLogo from "~/assets/nuxt.svg?raw";
 
 export default {
-  components: { NuxtLogo },
+  components: { NuxtLogo, NuxtLogoComponent },
 
   data() {
     return { rawNuxtLogo };

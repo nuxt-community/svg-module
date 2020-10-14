@@ -18,11 +18,13 @@
   "main": "lib/module.js",
   "scripts": {
     "dev": "nuxt dev example",
+    "generate": "nuxt generate example",
     "format": "prettier --write '**/*.{js,json,vue}'"
   },
   "dependencies": {
     "file-loader": "^6.0.0",
     "raw-loader": "^4.0.0",
+    "svg-to-vue-component": "^0.3.8",
     "url-loader": "^4.1.0",
     "vue-svg-loader": "^0.16.0"
   },

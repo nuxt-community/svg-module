@@ -13,6 +13,7 @@ _Super simple svg loading module for Nuxt.js_
     - [`file-loader`](#file-loader)
     - [`url-loader`](#url-loader)
     - [`vue-svg-loader`](#vue-svg-loader)
+    - [`svg-to-vue-component`](#svg-to-vue-component)
     - [`raw-loader`](#raw-loader)
   - [Caveats](#caveats)
   - [Contributing](#contributing)
@@ -25,6 +26,7 @@ This package is for loading SVG's into Nuxt.js pages. It allows you to import `.
 - `file.svg` - normal import using `file-loader`
 - `file.svg?data` - base64 data url import using `url-loader`
 - `file.svg?inline` - inline import using `vue-svg-loader`
+- `file.svg?component` - component import using `svg-to-vue-component/loader`
 - `file.svg?raw` - raw html import using `raw-loader`
 
 ## Installation
@@ -33,14 +35,37 @@ This package is for loading SVG's into Nuxt.js pages. It allows you to import `.
 npm install --save-dev @nuxtjs/svg
 ```
 
+Then in `nuxt.config.js`
 ```javascript
-// nuxt.config.js
 export default {
   buildModules: ["@nuxtjs/svg"],
 };
 ```
 
 And that's it! You don't have to install anything else, you're ready to go.
+
+Note that, you can also provide options for the queries [inline](https://github.com/visualfanatic/vue-svg-loader#readme) and [component](https://github.com/egoist/svg-to-vue-component#loader-options).
+Example with the default options:
+```javascript
+export default {
+  buildModules: [
+    ["@nuxtjs/svg", {
+      inline: { svgo: false },
+      component: {},
+    }],
+  ],
+};
+```
+**or**
+```javascript
+export default {
+  buildModules: ["@nuxtjs/svg"],
+  svg: {
+    inline: { svgo: false },
+    component: {},
+  },
+};
+```
 
 ## Usage
 
@@ -87,6 +112,26 @@ The usage examples are documented as:
 
 <script>
   import NuxtLogo from "~/assets/nuxt.svg?inline";
+
+  export default {
+    components: { NuxtLogo },
+  };
+</script>
+```
+
+```html
+<svg xmlns="http://www.w3.org/2000/svg"><path></path></svg>
+```
+
+### `svg-to-vue-component`
+
+```html
+<template>
+  <NuxtLogo />
+</template>
+
+<script>
+  import NuxtLogo from "~/assets/nuxt.svg?component";
 
   export default {
     components: { NuxtLogo },
