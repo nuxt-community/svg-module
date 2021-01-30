@@ -104,15 +104,18 @@ Load the raw SVG data as HTML using `raw-loader`:
 
 ```html
 <template>
-  <div v-html="rawNuxtLogo" />
+  <div v-html="cimage" />
 </template>
 
 <script>
-  import rawNuxtLogo from "~/assets/nuxt.svg?raw";
-
   export default {
-    data() {
-      return { rawNuxtLogo };
+    props: {
+      name: { type: String, default: "image" },
+    },
+    computed: {
+      cimage() {
+        return require(`../assets/${this.name}.svg?raw`)
+      },    
     },
   };
 </script>
