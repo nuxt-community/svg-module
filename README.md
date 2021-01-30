@@ -126,6 +126,26 @@ Load the raw SVG data as HTML using `raw-loader`:
 </div>
 ```
 
+## Dynamic imports
+
+To dynamically import an SVG, you can use the inline `require()` syntax.
+
+```html
+<template>
+  <div v-html="require(`../assets/${name}.svg?raw`)" />
+</template>
+
+<script>
+  export default {
+    props: {
+      name: { type: String, default: "image" },
+    },
+  };
+</script>
+```
+
+> This example uses `raw-loader`.
+
 ## Caveats
 
 In order for this module to work correctly, the [default `.svg` Nuxt.js webpack rule](https://nuxtjs.org/guide/assets/#webpack) gets replaced with this handler.
