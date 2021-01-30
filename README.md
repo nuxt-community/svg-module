@@ -104,18 +104,15 @@ Load the raw SVG data as HTML using `raw-loader`:
 
 ```html
 <template>
-  <div v-html="cimage" />
+  <div v-html="rawNuxtLogo" />
 </template>
 
 <script>
+  import rawNuxtLogo from "~/assets/nuxt.svg?raw";
+
   export default {
-    props: {
-      name: { type: String, default: "image" },
-    },
-    computed: {
-      cimage() {
-        return require(`../assets/${this.name}.svg?raw`)
-      },    
+    data() {
+      return { rawNuxtLogo };
     },
   };
 </script>
@@ -128,6 +125,26 @@ Load the raw SVG data as HTML using `raw-loader`:
   </svg>
 </div>
 ```
+
+## Dynamic imports
+
+To dynamically import an SVG, you can use the inline `require()` syntax.
+
+```html
+<template>
+  <div v-html="require(`../assets/${name}.svg?raw`)" />
+</template>
+
+<script>
+  export default {
+    props: {
+      name: { type: String, default: "image" },
+    },
+  };
+</script>
+```
+
+> This example uses `raw-loader`.
 
 ## Caveats
 
