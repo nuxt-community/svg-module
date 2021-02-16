@@ -163,8 +163,6 @@ Load the raw SVG data as HTML using `raw-loader`:
   import spriteNuxtLogo from "~/assets/nuxt.svg?sprite";
 
   export default {
-    components: { spriteNuxtLogo },
-
     data() {
       return { spriteNuxtLogo };
     },
