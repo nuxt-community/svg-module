@@ -160,8 +160,6 @@ So when using the `?data` query, it will _always_ use `url-loader` regardless of
 
 As this loader attempts to abstract webpack configuration from the process and make it easier to use multiple svg loaders, any contributions that add more svg loader methods to the configuration will be accepted wholeheartedly!
 
-Also I'll be actively maintaining this project so if you'd rather just make a request for a loader or a feature; I'd be happy to take a look and see what I can do myself :)
-
 ## License
 
 [MIT License](./LICENSE)
