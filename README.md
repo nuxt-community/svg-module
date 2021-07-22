@@ -1,5 +1,7 @@
 # @nuxtjs/svg
 
+> ⚠️ **LOOKING FOR MAINTAINERS**: I'm afraid I mostly use React w/ Next.js so I don't have the time to actively keep this project up to date. Please open an issue if you would be interested in helping triage issues and maintaing! My apologies - Sam
+
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
