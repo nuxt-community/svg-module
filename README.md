@@ -50,7 +50,7 @@ And that's it! You don't have to install anything else, you're ready to go.
 // nuxt.config.js
 export default {
   svg: {
-      sprite: {
+      svgSpriteLoader: {
         // svg-sprite-loader options
       }
   }
