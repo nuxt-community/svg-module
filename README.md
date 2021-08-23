@@ -39,6 +39,12 @@ npm install --save-dev @nuxtjs/svg
 // nuxt.config.js
 export default {
   buildModules: ["@nuxtjs/svg"],
+
+  svg: {
+      svgo: {
+          // Your svgo config (default: false)
+      },
+  }
 };
 ```
 
