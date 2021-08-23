@@ -14,6 +14,7 @@ _Super simple svg loading module for Nuxt.js_
     - [`url-loader`](#url-loader)
     - [`vue-svg-loader`](#vue-svg-loader)
     - [`raw-loader`](#raw-loader)
+    - [`svg-sprite-loader`](#svg-sprite-loader)
   - [Caveats](#caveats)
   - [Contributing](#contributing)
   - [License](#license)
@@ -150,7 +151,7 @@ Load the raw SVG data as HTML using `raw-loader`:
 </div>
 ```
 
-### `vue-sprite-loader`
+### `svg-sprite-loader`
 
 ```html
 <template>
