@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/svg",
-  "version": "0.1.13",
+  "version": "0.1.12",
   "description": "Super simple svg loading module for Nuxt.js",
   "keywords": [
     "nuxt",
