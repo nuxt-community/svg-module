@@ -49,23 +49,14 @@ And that's it! You don't have to install anything else, you're ready to go.
 ```javascript
 // nuxt.config.js
 export default {
-  buildModules: [
-    [
-      "@nuxtjs/svg",
-      {
-        sprite: {
-          svgSpriteLoader: {
-            // svg-sprite-loader options
-          },
-          spriteLoaderPlugin: {
-            // SpriteLoaderPlugin options
-          }
-        }
-      },
-    ],
-  ],
+  svg: {
+      sprite: {
+        // svg-sprite-loader options
+      }
+  }
 };
 ```
+
 
 ## Usage
 
@@ -169,6 +160,12 @@ Load the raw SVG data as HTML using `raw-loader`:
     },
   };
 </script>
+```
+
+```html
+<svg viewBox="0 0 400 298">
+  <use xlink:href="#nuxt--sprite"></use>
+</svg>
 ```
 
 ## Dynamic imports
