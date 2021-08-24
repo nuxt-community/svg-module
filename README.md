@@ -51,9 +51,7 @@ And that's it! You don't have to install anything else, you're ready to go.
 export default {
   svg: {
       vueSvgLoader: {
-          svgo: {
-              // svgo options
-          }
+          // vue-svg-loader options
       },
       svgSpriteLoader: {
         // svg-sprite-loader options
