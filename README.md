@@ -50,6 +50,11 @@ And that's it! You don't have to install anything else, you're ready to go.
 // nuxt.config.js
 export default {
   svg: {
+      vueSvgLoader: {
+          svgo: {
+              // svgo options
+          }
+      },
       svgSpriteLoader: {
         // svg-sprite-loader options
       }
