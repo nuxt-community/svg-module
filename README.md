@@ -54,7 +54,7 @@ export default {
           // vue-svg-loader options
       },
       svgSpriteLoader: {
-        // svg-sprite-loader options
+          // svg-sprite-loader options
       }
   }
 };
