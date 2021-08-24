@@ -1,7 +1,5 @@
 # @nuxtjs/svg
 
-> ⚠️ **LOOKING FOR MAINTAINERS**: I'm afraid I mostly use React w/ Next.js so I don't have the time to actively keep this project up to date. Please open an issue if you would be interested in helping triage issues and maintaing! My apologies - Sam
-
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
@@ -16,6 +14,7 @@ _Super simple svg loading module for Nuxt.js_
     - [`url-loader`](#url-loader)
     - [`vue-svg-loader`](#vue-svg-loader)
     - [`raw-loader`](#raw-loader)
+    - [`svg-sprite-loader`](#svg-sprite-loader)
   - [Caveats](#caveats)
   - [Contributing](#contributing)
   - [License](#license)
@@ -28,6 +27,7 @@ This package is for loading SVG's into Nuxt.js pages. It allows you to import `.
 - `file.svg?data` - base64 data url import using `url-loader`
 - `file.svg?inline` - inline import using `vue-svg-loader`
 - `file.svg?raw` - raw html import using `raw-loader`
+- `file.svg?sprite` - SVG sprite using `svg-sprite-loader`
 
 ## Installation
 
@@ -39,16 +39,29 @@ npm install --save-dev @nuxtjs/svg
 // nuxt.config.js
 export default {
   buildModules: ["@nuxtjs/svg"],
-
-  svg: {
-      svgo: {
-          // Your svgo config (default: false)
-      },
-  }
 };
 ```
 
 And that's it! You don't have to install anything else, you're ready to go.
+
+## Configuration
+
+```javascript
+// nuxt.config.js
+export default {
+  svg: {
+      vueSvgLoader: {
+          svgo: {
+              // svgo options
+          }
+      },
+      svgSpriteLoader: {
+        // svg-sprite-loader options
+      }
+  }
+};
+```
+
 
 ## Usage
 
@@ -132,6 +145,32 @@ Load the raw SVG data as HTML using `raw-loader`:
     <g fill-rule="nonzero" fill="none"><path></path></g>
   </svg>
 </div>
+```
+
+### `svg-sprite-loader`
+
+```html
+<template>
+    <svg :viewBox="spriteNuxtLogo.viewBox">
+      <use :xlink:href="'#' + spriteNuxtLogo.id"></use>
+    </svg>
+</template>
+
+<script>
+  import spriteNuxtLogo from "~/assets/nuxt.svg?sprite";
+
+  export default {
+    data() {
+      return { spriteNuxtLogo };
+    },
+  };
+</script>
+```
+
+```html
+<svg viewBox="0 0 400 298">
+  <use xlink:href="#nuxt--sprite"></use>
+</svg>
 ```
 
 ## Dynamic imports
