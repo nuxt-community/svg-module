@@ -14,6 +14,7 @@ _Super simple svg loading module for Nuxt.js_
     - [`url-loader`](#url-loader)
     - [`vue-svg-loader`](#vue-svg-loader)
     - [`raw-loader`](#raw-loader)
+    - [`svg-sprite-loader`](#svg-sprite-loader)
   - [Caveats](#caveats)
   - [Contributing](#contributing)
   - [License](#license)
@@ -26,6 +27,7 @@ This package is for loading SVG's into Nuxt.js pages. It allows you to import `.
 - `file.svg?data` - base64 data url import using `url-loader`
 - `file.svg?inline` - inline import using `vue-svg-loader`
 - `file.svg?raw` - raw html import using `raw-loader`
+- `file.svg?sprite` - SVG sprite using `svg-sprite-loader`
 
 ## Installation
 
@@ -41,6 +43,23 @@ export default {
 ```
 
 And that's it! You don't have to install anything else, you're ready to go.
+
+## Configuration
+
+```javascript
+// nuxt.config.js
+export default {
+  svg: {
+      vueSvgLoader: {
+          // vue-svg-loader options
+      },
+      svgSpriteLoader: {
+          // svg-sprite-loader options
+      }
+  }
+};
+```
+
 
 ## Usage
 
@@ -126,6 +145,32 @@ Load the raw SVG data as HTML using `raw-loader`:
 </div>
 ```
 
+### `svg-sprite-loader`
+
+```html
+<template>
+    <svg :viewBox="spriteNuxtLogo.viewBox">
+      <use :xlink:href="'#' + spriteNuxtLogo.id"></use>
+    </svg>
+</template>
+
+<script>
+  import spriteNuxtLogo from "~/assets/nuxt.svg?sprite";
+
+  export default {
+    data() {
+      return { spriteNuxtLogo };
+    },
+  };
+</script>
+```
+
+```html
+<svg viewBox="0 0 400 298">
+  <use xlink:href="#nuxt--sprite"></use>
+</svg>
+```
+
 ## Dynamic imports
 
 To dynamically import an SVG, you can use the inline `require()` syntax.
@@ -157,8 +202,6 @@ So when using the `?data` query, it will _always_ use `url-loader` regardless of
 ## Contributing
 
 As this loader attempts to abstract webpack configuration from the process and make it easier to use multiple svg loaders, any contributions that add more svg loader methods to the configuration will be accepted wholeheartedly!
-
-Also I'll be actively maintaining this project so if you'd rather just make a request for a loader or a feature; I'd be happy to take a look and see what I can do myself :)
 
 ## License
 
