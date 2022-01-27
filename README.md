@@ -55,6 +55,9 @@ export default {
       },
       svgSpriteLoader: {
           // svg-sprite-loader options
+      },
+      fileLoader: {
+          // file-loader options
       }
   }
 };
