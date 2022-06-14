@@ -194,6 +194,24 @@ To dynamically import an SVG, you can use the inline `require()` syntax.
 
 > This example uses `raw-loader`.
 
+To render an SVG without wrapper element and the use of `v-html`, a combination of [dynamic components](https://vuejs.org/guide/essentials/component-basics.html#dynamic-components) and `?inline` can be used. See #72 for contect.
+
+```html
+<template>
+  <component is="require(`../assets/${name}.svg?inline`)" />
+</template>
+
+<script>
+  export default {
+    props: {
+      name: { type: String, default: "image" },
+    },
+  };
+</script>
+```
+
+> This example uses `vue-svg-loader`.
+
 ## Caveats
 
 In order for this module to work correctly, the [default `.svg` Nuxt.js webpack rule](https://nuxtjs.org/guide/assets/#webpack) gets replaced with this handler.
