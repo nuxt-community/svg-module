@@ -194,11 +194,11 @@ To dynamically import an SVG, you can use the inline `require()` syntax.
 
 > This example uses `raw-loader`.
 
-To render an SVG without wrapper element and the use of `v-html`, a combination of [dynamic components](https://vuejs.org/guide/essentials/component-basics.html#dynamic-components) and `?inline` can be used. See #72 for contect.
+To render an SVG without wrapper element and the use of `v-html`, a combination of [dynamic components](https://vuejs.org/guide/essentials/component-basics.html#dynamic-components) and `?inline` can be used. See #72 for context.
 
 ```html
 <template>
-  <component is="require(`../assets/${name}.svg?inline`)" />
+  <component :is="require(`../assets/${name}.svg?inline`)" />
 </template>
 
 <script>
