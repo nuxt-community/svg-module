@@ -30,7 +30,8 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0"
+    "@nuxt/kit": "^3.0.0",
+    "vite-svg-loader": "^3.6.0"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.2.1",

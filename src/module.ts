@@ -1,5 +1,6 @@
-import { defineNuxtModule } from '@nuxt/kit'
+import {addVitePlugin, defineNuxtModule} from '@nuxt/kit'
 import { name, version } from '../package.json'
+import viteSvgLoader from 'vite-svg-loader'
 
 export interface SvgModuleOptions {}
 
@@ -10,6 +11,6 @@ export default defineNuxtModule<SvgModuleOptions>({
     configKey: 'svg'
   },
   setup (options, nuxt) {
-    console.log('setup')
+    addVitePlugin(viteSvgLoader())
   }
 })
