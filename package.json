@@ -31,11 +31,13 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0",
-    "vite-svg-loader": "^3.6.0"
+    "vite-svg-loader": "^3.6.0",
+    "vue-svg-loader": "^0.17.0-beta.2"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.2.1",
     "@nuxt/schema": "^3.0.0",
+    "@nuxt/webpack-builder": "^3.0.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "eslint": "^8.28.0",
     "nuxt": "^3.0.0"
