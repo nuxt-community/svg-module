@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import Logo from './assets/nuxt.svg?component'
+import Logo from './assets/nuxt.svg?inline'
 </script>
 
 <style>
