@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 import SvgModule from '..'
 
 export default defineNuxtConfig({
-  // builder: 'webpack',
+  builder: 'webpack',
   modules: [
     SvgModule
   ],

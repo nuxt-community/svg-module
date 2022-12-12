@@ -31,6 +31,10 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0",
+    "file-loader": "^6.2.0",
+    "raw-loader": "^4.0.2",
+    "svg-sprite-loader": "^6.0.11",
+    "url-loader": "^4.1.1",
     "vite-svg-loader": "^3.6.0",
     "vue-svg-loader": "^0.17.0-beta.2"
   },

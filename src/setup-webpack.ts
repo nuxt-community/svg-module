@@ -54,7 +54,7 @@ export default function (config: Configuration) {
       options: { svgo: false },
     },
   ];
-console.log('config.name=', config.name)
+
   if (config.name !== "server") {
     // @ts-ignore
     const jsxRule = config.module?.rules?.find((r) => r.test.test(".jsx"));
@@ -77,33 +77,34 @@ console.log('config.name=', config.name)
           'vue-svg-loader',
         ],
       },
-      // {
-      //   resourceQuery: /data/,
-      //   use: {
-      //     loader: "url-loader",
-      //     options: { esModule: false },
-      //   },
-      // },
-      // {
-      //   resourceQuery: /raw/,
-      //   use: {
-      //     loader: "raw-loader",
-      //     options: { esModule: false },
-      //   },
-      // },
-      // {
-      //   resourceQuery: /sprite/,
-      //   use: {
-      //     loader: "svg-sprite-loader",
-      //     options: options.svgSpriteLoader || {},
-      //   },
-      // },
-      // {
-      //   use: {
-      //     loader: "file-loader",
-      //     options: { esModule: false, ...fileLoaderOptions },
-      //   },
-      // },
+      {
+        resourceQuery: /data/,
+        use: {
+          loader: "url-loader",
+          options: { esModule: false },
+        },
+      },
+      {
+        resourceQuery: /raw/,
+        use: {
+          loader: "raw-loader",
+          options: { esModule: false },
+        },
+      },
+      {
+        resourceQuery: /sprite/,
+        use: {
+          loader: "svg-sprite-loader",
+          // options: options.svgSpriteLoader || {},
+        },
+      },
+      {
+        use: {
+          loader: "file-loader",
+          // options: { esModule: false, ...fileLoaderOptions },
+          options: { esModule: false },
+        },
+      },
     ],
   };
 
