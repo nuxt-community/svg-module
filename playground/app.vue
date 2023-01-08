@@ -1,27 +1,27 @@
 <template>
     <div class="root">
       <div>
-        <h2>file-loader</h2>
+        <h2>no query</h2>
         <img src="~/assets/nuxt.svg" />
       </div>
 
       <div>
-        <h2>url-loader</h2>
+        <h2>data</h2>
         <img src="~/assets/nuxt.svg?data" />
       </div>
 
       <div>
-        <h2>vue-svg-loader</h2>
+        <h2>component</h2>
         <NuxtLogo />
       </div>
 
       <div>
-        <h2>raw-loader</h2>
+        <h2>raw</h2>
         <div v-html="rawNuxtLogo" />
       </div>
 
       <div>
-        <h2>svg-sprite-loader</h2>
+        <h2>sprite</h2>
         <svg :viewBox="spriteNuxtLogo.viewBox">
           <use :xlink:href="'#' + spriteNuxtLogo.id"></use>
         </svg>

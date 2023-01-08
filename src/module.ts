@@ -14,7 +14,9 @@ export default defineNuxtModule<SvgModuleOptions>({
   },
   setup (options, nuxt) {
     addVitePlugin(createVitePlugin())
-    addVitePlugin(viteSvgLoader())
+    addVitePlugin(viteSvgLoader({
+      defaultImport: 'url'
+    }))
 
     extendWebpackConfig(setupWebpack)
   }
