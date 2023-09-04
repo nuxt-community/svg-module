@@ -1,7 +1,7 @@
 import { Plugin } from 'vite'
 
 // vite-svg-loader regex
-const svgRegex = /\.svg(\?(raw|component|skipsvgo|inline))?$/
+const svgRegex = /\.svg(\?(raw|component|skipsvgo|inline|data))?$/
 
 export default function () {
   return {
